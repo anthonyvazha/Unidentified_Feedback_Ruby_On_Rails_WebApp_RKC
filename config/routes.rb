@@ -3,4 +3,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+
+  get '/', to:  'pages#home' # =>  syntax: 'controller_name_here#action_name_here'
 end
