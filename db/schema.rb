@@ -24,3 +24,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_02_010052) do
   end
 
 end
+
+# Active Record is a ORM(Object Relationship Mapper)
+
+# Feedback.find_by(text: "put text here") will return the first one they find 
+# vs Feedback.where(text: "put text here") will return multiple ones
+# Feedback.all() lets you see all the things
+# Feedback.find(1) 1 is the index id of the database
+# Feedback.create(text: "i hate you", recipient_handle: "elonmusk")
+# Feedback.count()
+# Feedback.create!() vs Feedback.create() - ! rasises a exception on failure
+# Feedback.last - gives you the last created feedback
+# Feedback.update(text: "new text here")
