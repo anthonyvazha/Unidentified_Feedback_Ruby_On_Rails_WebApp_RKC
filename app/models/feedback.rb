@@ -7,8 +7,7 @@ class Feedback < ApplicationRecord
     after_create :send_tweet
 
     def send_tweet
-        puts "Sending Tweet!!!!"
-        # insert twitter API logic here
+        TwitterService.tweet!(text) # 1. look for the 'text' function, then expect it to the object itself. same as self.text
     end
    
 end

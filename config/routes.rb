@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   # root "articles#index"
   root "pages#home"# this line is the same as the next line
   # get '/', to:  'pages#home' # =>  syntax: 'controller_name_here#action_name_here'
-
+  post 'feedbacks', to: "feedbacks#create" 
 end
+
 
 
 
@@ -23,3 +24,9 @@ end
 # Router (config/routes.rb file) tells server what to do with request
 # Controller invokes a specific "action" (function) on the request
 # View (the response template being rendered by the Controller)
+
+
+
+# HTTP Methods: GET, POST, PUT/PATCH, Delete/Destory
+# # HTTP has a header, body. Header might have things like autherization, browser footprint
+# # Body might have paramaters  {utm_sourceL 'google', utm_campagins:'competieors_traffic'}-->

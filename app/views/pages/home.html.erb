@@ -1,0 +1,86 @@
+<div class="relative isolate overflow-hidden bg-gray-900">
+  <div class="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center">
+      <h1 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+        Give anonymous feedback<br />to brands you love (or hate)
+      </h1>
+      <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-zinc-300">
+        Unidentified Feedback is free tool that allows anyone to share a brief
+        suggestion, anonymously by simply providing a twitter handle.
+      </p>
+      <%= form_for(Feedback.new) do  |f| %>
+        <div class="max-w-xl mx-auto">
+          <label
+            for="recipient_handle"
+            class="block text-sm font-medium leading-6 text-gray-900"
+            >Recipeient Twitter Handle</label
+          >
+          <div class="mt-2 flex rounded-md shadow-sm">
+            <span
+              class="inline-flex items-center rounded-l-md border border-r-0 border-gray-300 px-3 text-gray-500 sm:text-sm"
+              >@</span
+            >
+            <input
+              type="text"
+              name="feedback[recipient_handle]"
+              id="feedback_recipient_handle"
+              class="block w-full min-w-0 flex-1 rounded-none rounded-r-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              placeholder="twitter_profile"
+            />
+          </div>
+        </div>
+        <div class="max-w-xl mx-auto mt-4">
+          <!-- <label
+            for="feedback"
+            class="block text-sm font-medium leading-6 text-gray-900"
+            >Add your feedback</label
+          > -->
+          <div class="mt-2">
+            <textarea
+              rows="4"
+              name="feedback[text]"
+              id="text"
+              placeholder="When you didn't refund me last week....."
+              class="p-4 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            ></textarea>
+          </div>
+          <div class="mt-1">
+              <p class="text-right text-gray-200">
+                  50/200
+              </p>
+            </div>
+
+          <div class="mt-1 flex items-center justify-end gap-x-6">
+              <button
+                href="#"
+                type='submit'
+                class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                >Send Feedback
+                </button>
+            </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  
+  
+  <svg
+    viewBox="0 0 1024 1024"
+    class="absolute left-1/2 top-1/2 -z-10 h-[64rem] w-[64rem] -translate-x-1/2 [mask-image:radial-gradient(closest-side,white,transparent)]"
+    aria-hidden="true"
+  >
+    <circle
+      cx="512"
+      cy="512"
+      r="512"
+      fill="url(#8d958450-c69f-4251-94bc-4e091a323369)"
+      fill-opacity="0.7"
+    />
+    <defs>
+      <radialGradient id="8d958450-c69f-4251-94bc-4e091a323369">
+        <stop stop-color="#7775D6" />
+        <stop offset="1" stop-color="#E935C1" />
+      </radialGradient>
+    </defs>
+  </svg>
+</div>
