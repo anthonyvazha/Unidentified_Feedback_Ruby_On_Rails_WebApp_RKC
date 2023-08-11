@@ -7,10 +7,15 @@ require 'oauth/request_proxy/typhoeus_request'
 # # class style
 # TwitterService.tweet!("message goes here!")
 
+
+
 class TwitterService
-    def self.tweet!(message)
+    def self.message(feedback)
+        ".@#{feedback.recipient_handle}, '#{feedback.text}' --Anon" # => 250 character (277)
+    end
+    def self.tweet!(feedback)
         body = {
-        "text": message # Optional timestamp prevents "duplicate content" API error
+        "text": message(feedback) # Optional timestamp prevents "duplicate content" API error
         }
 
 

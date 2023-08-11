@@ -8,6 +8,8 @@
         Unidentified Feedback is free tool that allows anyone to share a brief
         suggestion, anonymously by simply providing a twitter handle.
       </p>
+
+
       <%= form_for(Feedback.new) do  |f| %>
         <div class="max-w-xl mx-auto">
           <label
@@ -22,6 +24,8 @@
             >
             <input
               type="text"
+              required
+              maxlength="14"
               name="feedback[recipient_handle]"
               id="feedback_recipient_handle"
               class="block w-full min-w-0 flex-1 rounded-none rounded-r-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -39,6 +43,8 @@
             <textarea
               rows="4"
               name="feedback[text]"
+              required
+              maxlength="250"
               id="text"
               placeholder="When you didn't refund me last week....."
               class="p-4 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -46,7 +52,7 @@
           </div>
           <div class="mt-1">
               <p class="text-right text-gray-200">
-                  50/200
+                  <span id="char_counter">0</span>/250
               </p>
             </div>
 
@@ -84,3 +90,23 @@
     </defs>
   </svg>
 </div>
+<script type="text/javascript">
+    const charCounter = document.getElementById('char_counter')
+
+    document.getElementById('text').addEventListener('keyup', function(){
+          let charLength = this.value.length
+
+          charCounter.innerText = charLength
+
+          if(charLength > 225) {
+            charCounter.style.color = 'yellow'
+          } else {
+            charCounter.style.color = 'white'
+          }
+          if (charLength == 250) {
+            charCounter.style.color = 'red'
+          }
+          
+    });
+</script>
+
