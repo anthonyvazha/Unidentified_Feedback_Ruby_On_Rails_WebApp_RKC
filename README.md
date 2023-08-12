@@ -1,5 +1,5 @@
-# Project Name Here
-<project> does X for Y because Z.
+# Unidentified Feedback
+<project> Unidentified Feedback is free tool that allows anyone to share a brief suggestion, anonymously by simply providing a twitter handle.
 
 ## Installation
 1. clone the repo
