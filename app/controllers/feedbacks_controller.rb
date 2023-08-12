@@ -1,8 +1,10 @@
 class FeedbacksController < ApplicationController
     def create
         # feedback_params = request.params[:feedback]
-        Feedback.create(feedback_params) # => {recipent_handle: 'somewhere' , test: "someting"}
+        feedback = Feedback.create(feedback_params) # => {recipent_handle: 'somewhere' , test: "someting"}
         # TwitterService.tweet!(feedback_params[:text]) => we will do this at the model level not in the contollere level
+        session[:tweet_url] = feedback.tweet_url #the session can be called anything 
+        redirect_to root_path
     end
 
     private

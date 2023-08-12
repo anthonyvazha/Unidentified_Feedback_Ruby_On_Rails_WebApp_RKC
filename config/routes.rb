@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'pages/home'
   # Defines the root path route ("/")
   # root "articles#index"
-  root "pages#home"# this line is the same as the next line
+  root "pages#home"# this line is the same as the next line #rooth_path # => '/' root_url
   # get '/', to:  'pages#home' # =>  syntax: 'controller_name_here#action_name_here'
   post 'feedbacks', to: "feedbacks#create" 
 end

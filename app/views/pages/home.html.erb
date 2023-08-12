@@ -19,7 +19,7 @@
           >
           <div class="mt-2 flex rounded-md shadow-sm">
             <span
-              class="inline-flex items-center rounded-l-md border border-r-0 border-gray-300 px-3 text-gray-500 sm:text-sm"
+              class="inline-flex items-center rounded-l-md border border-r-0 border-gray-300 px-3 text-white sm:text-sm"
               >@</span
             >
             <input
@@ -64,6 +64,10 @@
                 >Send Feedback
                 </button>
             </div>
+            <% if session[:tweet_url]%>
+                <p class="text-gray-200 text-center"> Tweet sent! <a class="text-blue-400" target="_blank" href="<%= session[:tweet_url]%>">View Tweet!</a></p>
+            <% end %>
+            
         </div>
       </div>
     </div>
